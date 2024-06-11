@@ -1,7 +1,7 @@
 import openai
-
+import credentials
 # Perplexity AI API key
-PERPLEXITY_API_KEY = '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'
+PERPLEXITY_API_KEY = credentials.perplexity_api_key
 
 system_prompt = """You are an AI assistant that uses the Perplexity API to analyze user queries and determine if they are against Iran's internet rules. You will receive a user query as input, and you should use the Perplexity API to check if the query is likely to be filtered or not allowed in Iran.
 The following types of content are considered against Iran's internet rules:
