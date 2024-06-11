@@ -8,6 +8,7 @@ document.getElementById('search-button').addEventListener('click', function() {
     fetch(`/search?q=${encodeURIComponent(query)}`)
         .then(response => response.json())
         .then(data => {
+            console.log(data);  // Debug log
             displayVideoList(data.items);
         })
         .catch(error => {

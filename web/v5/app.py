@@ -1,9 +1,13 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import requests
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 
 YOUTUBE_API_KEY = 'AIzaSyD_nl2Hzfq3vebmDD5g1WUJ5OHNHe27tyc'
+
+@app.route('/')
+def index():
+    return send_from_directory('static', 'index.html')
 
 @app.route('/search', methods=['GET'])
 def search_videos():
@@ -19,6 +23,7 @@ def search_videos():
         'type': 'video',
         'maxResults': 10
     }
+
     response = requests.get(url, params=params)
     data = response.json()
 
