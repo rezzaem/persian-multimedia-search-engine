@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yekan Bakh:wght@400;500;800&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
+  	
+  	<style>
+		.video:hover{
+			opacity: 0.7;
+		}
+    		body {
+      			margin: 0;
+      			line-height: normal;
+    		}
+			#four{
+				position: absolute;
+				top: 34.5rem;
+				left: calc(50% - 77px);
+				backdrop-filter: blur(18.07px);
+				border-radius: 100px;
+				height: 8.188rem;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				padding: 0.543rem 0.812rem;
+				box-sizing: border-box;
+				gap: 0.45rem;
+			}
+			#five{
+				width: 2.719rem;
+				position: relative;
+				height: 2.719rem;
+				overflow: hidden;
+				flex-shrink: 0;
+			}
+			#six{
+				overflow: hidden;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				padding: 0.95rem 0rem;
+			}
+			#seven{
+				position: relative;
+				line-height: 0.672rem;
+				font-weight: 500;
+			}
+    		#first{
+				width: 100%;
+				position: relative;
+				background-color: #694ddd;
+				height: 64rem;
+				text-align: center;
+				font-size: 0.916rem;
+				color: rgba(255, 255, 255, 0.86);
+				font-family: 'Yekan Bakh';
+			}
+			#second{
+				position: absolute;
+				width: 100%;
+				top: 0rem;
+				right: 0%;
+				left: 0%;
+				height: 64rem;
+				color: #fff;
+			}
+			#third{
+				position: absolute;
+				width: 100%;
+				top: 0rem;
+				right: 0rem;
+				left: 0rem;
+				max-width: 100%;
+				overflow: hidden;
+				height: 64rem;
+				object-fit: cover;
+			}
+			#fourth{
+				position: absolute;
+				width: 100%;
+				top: 0rem;
+				right: 0rem;
+				left: 0rem;
+				height: 6.063rem;
+				overflow: hidden;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: space-between;
+				padding: 1.5rem 2.625rem;
+				box-sizing: border-box;
+			}
+			#darklightModeContainer{
+				width: 2.5rem;
+				height: 2.5rem;
+				overflow: hidden;
+				flex-shrink: 0;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				padding: 0.125rem;
+				box-sizing: border-box;
+				cursor: pointer;
+			}
+			#fifth{
+				width: 1.319rem;
+				position: relative;
+				height: 1.319rem;
+			}
+			#sixth{
+				height: 1.919rem;
+				overflow: hidden;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				padding: 0.668rem 0.875rem;
+				box-sizing: border-box;
+				gap: 1.25rem;
+			}
+			#seventh{
+				width: 3.25rem;
+				position: relative;
+				line-height: 0.499rem;
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 1.25rem;
+				flex-shrink: 0;
+			}
+			#eighth{
+				width: 2.75rem;
+				position: relative;
+				line-height: 0.499rem;
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 1.25rem;
+				flex-shrink: 0;
+			}
+			#ninth{
+
+			}
+			#tenth{
+				width: 0.956rem;
+				position: relative;
+				height: 1.419rem;
+				overflow: hidden;
+				flex-shrink: 0;
+			}
+			#text2{
+				width: 2.688rem;
+				position: relative;
+				line-height: 0.499rem;
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 1.25rem;
+				flex-shrink: 0;
+				cursor: pointer;
+			}
+			#text{
+				width: 3.456rem;
+				position: relative;
+				font-size: 1.75rem;
+				line-height: 0.5rem;
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-shrink: 0;
+				cursor: pointer;
+			}
+			#twelves{
+				position: absolute;
+				width: 100%;
+				right: 0%;
+				bottom: 0rem;
+				left: 0%;
+				overflow: hidden;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				padding: 1.5rem 16.75rem;
+				box-sizing: border-box;
+				font-size: 1.063rem;
+				color: rgba(255, 255, 255, 0.86);
+			}
+			#thirteenth{
+				position: relative;
+				line-height: 0.75rem;
+			}
+			#fourteenth{
+				position: absolute;
+				top: 12.188rem;
+				left: calc(50% - 167px);
+				font-size: 4.5rem;
+				line-height: 0.75rem;
+				font-weight: 800;
+				background: linear-gradient(90deg, #6151a1, #4c3e86);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 20.938rem;
+				height: 6.188rem;
+			}
+			#searchBarContainer{
+				background-image: url('/Images/AI Icon.svg');
+				background-repeat: no-repeat;
+				background-size: 20px 20px;
+				background-position: right center;
+				text-align: right;
+				position: absolute;
+				width: 46.53%;
+				top: 24.813rem;
+				right: 26.74%;
+				left: 26.74%;
+				backdrop-filter: blur(25px);
+				border-radius: 40px;
+				background-color: rgba(255, 255, 255, 0.05);
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0.75rem 1.125rem;
+				box-sizing: border-box;
+				font-size: 1rem;
+				color: white;
+			}
+			#fifteenth{
+				width: 1.5rem;
+				position: relative;
+				height: 1.5rem;
+				overflow: hidden;
+				flex-shrink: 0;
+			}
+			#sixteenth{
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				gap: 0.5rem;
+			}
+			#seventeenth{
+				position: relative;
+			}
+			#eighteenth{
+				width: 1.375rem;
+				position: relative;
+				height: 1.375rem;
+				overflow: hidden;
+				flex-shrink: 0;
+			}
+			#nineteenth{
+				position: absolute;
+				width: 75.69%;
+				top: 30.625rem;
+				right: 12.15%;
+				left: 12.15%;
+				border-radius: 25px;
+				height: 22.188rem;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-start;
+				gap: 1.187rem;
+				font-size: 1.375rem;
+				overflow: auto;
+			}
+			#twenty{
+				overflow: hidden;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				padding: 1.062rem 0rem;
+			}
+			#twenty_one{
+				position: relative;
+				line-height: 0.75rem;
+				font-weight: 500;
+			}
+			#twenty_two{
+				align-self: stretch;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: flex-start;
+				justify-content: center;
+				gap: 1rem;
+				text-align: left;
+				font-size: 0.75rem;
+				color: #fff;
+				font-family: Roboto;
+			}
+			#twenty_three{
+				width: 18.5rem;
+				position: relative;
+				backdrop-filter: blur(25px);
+				border-radius: 12px;
+				background-color: rgba(255, 255, 255, 0.06);
+				height: 14.625rem;
+				cursor: pointer;
+			}
+			#twenty_four{
+				position: absolute;
+				top: calc(50% - 107px);
+				left: calc(50% - 138px);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 0.75rem;
+			}
+			#twenty_five{
+				width: 17.25rem;
+				position: relative;
+				border-radius: 12px;
+				height: 9.75rem;
+				overflow: hidden;
+				flex-shrink: 0;
+			}
+			#twenty_six{
+				position: absolute;
+				top: 0rem;
+				left: 0rem;
+				width: 17.25rem;
+				height: 9.75rem;
+				object-fit: cover;
+			}
+			#twenty_seven{
+				position: absolute;
+				top: 8.375rem;
+				left: 15rem;
+				border-radius: 2px;
+				background-color: rgba(0, 0, 0, 0.8);
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: flex-start;
+				padding: 0.187rem 0.25rem;
+			}
+			#twenty_eight{
+				position: relative;
+				line-height: 0.75rem;
+				font-weight: 500;
+			}
+			#twenty_nine{
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: flex-start;
+				gap: 0.75rem;
+				font-size: 1rem;
+				color: rgba(255, 255, 255, 0.86);
+				font-family: 'Yekan Bakh';
+			}
+			#thirty{
+				width: 2.25rem;
+				position: relative;
+				height: 2.25rem;
+				object-fit: cover;
+			}
+			#thirty_one{
+				width: 14.25rem;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-start;
+				gap: 0.25rem;
+			}
+			#thirty_two{
+				align-self: stretch;
+				position: relative;
+				line-height: 1.375rem;
+				font-weight: 500;
+			}
+			#thirty_three{
+				align-self: stretch;
+				overflow: hidden;
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: flex-start;
+				gap: 0.75rem;
+				font-size: 0.875rem;
+				color: #606060;
+				font-family: Roboto;
+			}
+			#thirty_four{
+				width: 3rem;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start;
+			}
+			#thirty_five{
+				position: relative;
+				line-height: 1.25rem;
+			}
+			#thirty_six{
+				width: 14.25rem;
+				position: relative;
+				line-height: 1.25rem;
+				display: inline-block;
+				flex-shrink: 0;
+			}
+			#thirty_seven{
+				width: 18.5rem;
+				position: relative;
+				backdrop-filter: blur(25px);
+				border-radius: 12px;
+				background-color: rgba(255, 255, 255, 0.06);
+				height: 14.625rem;
+				cursor: pointer;
+			}
+			#thirty_eight{
+				position: absolute;
+				top: calc(50% - 107px);
+				left: calc(50% - 138px);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 0.75rem;
+			}
+			#thirty_nine{
+				width: 17.25rem;
+				position: relative;
+				border-radius: 12px;
+				height: 9.75rem;
+				overflow: hidden;
+				flex-shrink: 0;
+			}
+			#fourty{
+				position: absolute;
+				top: 0rem;
+				left: 0rem;
+				width: 17.25rem;
+				height: 9.75rem;
+				object-fit: cover;
+			}
+			#fourty_one{
+				position: absolute;
+				top: 8.375rem;
+				left: 15rem;
+				border-radius: 2px;
+				background-color: rgba(0, 0, 0, 0.8);
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: flex-start;
+				padding: 0.187rem 0.25rem;
+			}
+			#fourty_two{
+				position: relative;
+				line-height: 0.75rem;
+				font-weight: 500;
+			}
+			#fourty_three{
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: flex-start;
+				gap: 0.75rem;
+				font-size: 1rem;
+				color: rgba(255, 255, 255, 0.86);
+				font-family: 'Yekan Bakh';
+			}
+			#fourty_four{
+				width: 2.25rem;
+				position: relative;
+				height: 2.25rem;
+				object-fit: cover;
+			}
+			#fourty_five{
+				width: 14.25rem;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-start;
+				gap: 0.25rem;
+			}
+			#fourty_six{
+				align-self: stretch;
+				position: relative;
+				line-height: 1.375rem;
+				font-weight: 500;
+			}
+			#fourty_seven{
+				align-self: stretch;
+				overflow: hidden;
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: flex-start;
+				gap: 0.75rem;
+				font-size: 0.875rem;
+				color: #606060;
+				font-family: Roboto;
+			}
+			#fourty_eight{
+				width: 3rem;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start;
+			}
+			#fourty_nine{
+				position: relative;
+				line-height: 1.25rem;
+			}
+			#fifty{
+				width: 14.25rem;
+				position: relative;
+				line-height: 1.25rem;
+				display: inline-block;
+				flex-shrink: 0;
+			}
+			#fifty_one{
+				width: 18.5rem;
+				position: relative;
+				backdrop-filter: blur(25px);
+				border-radius: 12px;
+				background-color: rgba(255, 255, 255, 0.06);
+				height: 14.625rem;
+				cursor: pointer;
+			}
+			#fifty_two{
+				position: absolute;
+				top: calc(50% - 107px);
+				left: calc(50% - 138px);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 0.75rem;
+			}
+			#fifty_three{
+				width: 17.25rem;
+				position: relative;
+				border-radius: 12px;
+				height: 9.75rem;
+				overflow: hidden;
+				flex-shrink: 0;
+			}
+			#fifty_four{
+				position: absolute;
+				top: 0rem;
+				left: 0rem;
+				width: 17.25rem;
+				height: 9.75rem;
+				object-fit: cover;
+			}
+			#fifty_five{
+				position: absolute;
+				top: 8.375rem;
+				left: 15rem;
+				border-radius: 2px;
+				background-color: rgba(0, 0, 0, 0.8);
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: flex-start;
+				padding: 0.187rem 0.25rem;
+			}
+			#fifty_six{
+				position: relative;
+				line-height: 0.75rem;
+				font-weight: 500;
+			}
+			#fifty_seven{
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: flex-start;
+				gap: 0.75rem;
+				font-size: 1rem;
+				color: rgba(255, 255, 255, 0.86);
+				font-family: 'Yekan Bakh',serif;
+			}
+			#fifty_eight{
+				width: 2.25rem;
+				position: relative;
+				height: 2.25rem;
+				object-fit: cover;
+			}
+			#fifty_nine{
+				width: 14.25rem;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-start;
+				gap: 0.25rem;
+			}
+			#sixty{
+				align-self: stretch;
+				position: relative;
+				line-height: 1.375rem;
+				font-weight: 500;
+			}
+			#sixty_one{
+				align-self: stretch;
+				overflow: hidden;
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: flex-start;
+				gap: 0.75rem;
+				font-size: 0.875rem;
+				color: #606060;
+				font-family: Roboto;
+			}
+			#sixty_two{
+				width: 3rem;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start;
+			}
+			#sixty_three{
+				position: relative;
+				line-height: 1.25rem;
+			}
+			#sixty_four{
+				width: 14.25rem;
+				position: relative;
+				line-height: 1.25rem;
+				display: inline-block;
+				flex-shrink: 0;
+			}
+  	</style>
+  	
+  	
+</head>
+<body>
+  	
+  	<div id="first">
+    		<div id="second">
+      			<img id="third"  alt="" src="Images/Frame%2048%201.png"/>
+      			
+      			<div id="fourth" >
+        				<div id="darklightModeContainer">
+          					<img id="fifth" alt="" src="Images/Group.svg">
+          					
+        				</div>
+        				<div id="sixth">
+          					<div id="seventh">ارتباط با ما</div>
+          					<img id="tenth" alt="" src="Images/Frame%208.svg">
+          					
+          					<div id="eighth">درباره ما</div>
+          					<img id="ninth" style="width: 0.956rem;  position: relative;  height: 1.419rem;  overflow: hidden;  flex-shrink: 0;" alt="" src="Images/Frame%209.svg">
+          					
+          					<div id="text2">خانه</div>
+        				</div>
+        				<div id="text">لوگو</div>
+      			</div>
+      			<div id="twelves">
+        				<div id="thirteenth">کلیه حقوق برای لوگو محفوظ است.</div>
+      			</div>
+    		</div>
+    		<div id="fourteenth">صبح به خیر</div>
+    		<input placeholder="فکر نکن، جست و جو کن" type="text" id="searchBarContainer">
+<!--      			<img id="fifteenth" alt="" src="Images/search.svg">-->
+<!--      			-->
+<!--      			<div id="sixteenth">-->
+<!--        				<div id="seventeenth" style="position: relative;">فکر نکن، جستجو کن...</div>-->
+<!--        				<img id="eighteenth" alt="" src="Images/AI%20Icon.svg">-->
+<!--      			</div>-->
+    		</input>
+  	</div>
+  	
+  	
+  	
+  	
+  	<script>
+    	window.onload=()=>{
+			let x=0;
+			let specialVideosContainer=document.createElement("div");
+			specialVideosContainer.setAttribute("id","nineteenth");
+			  specialVideosContainer.innerHTML="\t\t\t<div id=\"twenty\">\n" +
+					  "        \t\t\t\t<div id=\"twenty_one\">ویدئو های ویژه</div>\n" +
+					  "      \t\t\t</div>\n" +
+					  "      \t\t\t<div id=\"twenty_two\">\n" +
+					  "        \t\t\t\t<div id=\"twenty_three\">\n" +
+					  "          \t\t\t\t\t<div id=\"twenty_four\">\n" +
+					  "            \t\t\t\t\t\t<div id=\"twenty_five\">\n" +
+					  "              \t\t\t\t\t\t\t<img id=\"twenty_six\" alt=\"\" src=\"Images/picture-c.png\">\n" +
+					  "              \t\t\t\t\t\t\t\n" +
+					  "              \t\t\t\t\t\t\t<div id=\"twenty_seven\">\n" +
+					  "                \t\t\t\t\t\t\t\t<div id=\"twenty_eight\">3:15</div>\n" +
+					  "              \t\t\t\t\t\t\t</div>\n" +
+					  "            \t\t\t\t\t\t</div>\n" +
+					  "            \t\t\t\t\t\t<div id=\"twenty_nine\">\n" +
+					  "              \t\t\t\t\t\t\t<img id=\"thirty\" alt=\"\" src=\"Images/youtube.svg\">\n" +
+					  "              \t\t\t\t\t\t\t\n" +
+					  "              \t\t\t\t\t\t\t<div id=\"thirty_one\">\n" +
+					  "                \t\t\t\t\t\t\t\t<div id=\"thirty_two\">هر لوگویی رو متحرک کن Logo Motion</div>\n" +
+					  "                \t\t\t\t\t\t\t\t<div id=\"thirty_three\">\n" +
+					  "                  \t\t\t\t\t\t\t\t\t<div id=\"thirty_four\">\n" +
+					  "                    \t\t\t\t\t\t\t\t\t\t<div id=\"thirty_five\">Digiato</div>\n" +
+					  "                  \t\t\t\t\t\t\t\t\t</div>\n" +
+					  "                  \t\t\t\t\t\t\t\t\t<div id=\"thirty_six\">1M views • 15 days ago</div>\n" +
+					  "                \t\t\t\t\t\t\t\t</div>\n" +
+					  "              \t\t\t\t\t\t\t</div>\n" +
+					  "            \t\t\t\t\t\t</div>\n" +
+					  "          \t\t\t\t\t</div>\n" +
+					  "        \t\t\t\t</div>\n" +
+					  "        \t\t\t\t<div id=\"thirty_seven\">\n" +
+					  "          \t\t\t\t\t<div id=\"thirty_eight\" >\n" +
+					  "            \t\t\t\t\t\t<div id=\"thirty_nine\" >\n" +
+					  "              \t\t\t\t\t\t\t<img id=\"fourty\" alt=\"\" src=\"Images/picture-b.png\">\n" +
+					  "              \t\t\t\t\t\t\t\n" +
+					  "              \t\t\t\t\t\t\t<div id=\"fourty_one\">\n" +
+					  "                \t\t\t\t\t\t\t\t<div id=\"fourty_two\">3:15</div>\n" +
+					  "              \t\t\t\t\t\t\t</div>\n" +
+					  "            \t\t\t\t\t\t</div>\n" +
+					  "            \t\t\t\t\t\t<div id=\"fourty_three\">\n" +
+					  "              \t\t\t\t\t\t\t<img id=\"fourty_four\" alt=\"\" src=\"Images/youtube.svg\">\n" +
+					  "              \t\t\t\t\t\t\t\n" +
+					  "              \t\t\t\t\t\t\t<div id=\"fourty_five\">\n" +
+					  "                \t\t\t\t\t\t\t\t<div id=\"fourty_six\">هر لوگویی رو متحرک کن Logo Motion</div>\n" +
+					  "                \t\t\t\t\t\t\t\t<div id=\"fourty_seven\">\n" +
+					  "                  \t\t\t\t\t\t\t\t\t<div id=\"fourty_eight\">\n" +
+					  "                    \t\t\t\t\t\t\t\t\t\t<div id=\"fourty_nine\">Digiato</div>\n" +
+					  "                  \t\t\t\t\t\t\t\t\t</div>\n" +
+					  "                  \t\t\t\t\t\t\t\t\t<div id=\"fifty\">1M views • 15 days ago</div>\n" +
+					  "                \t\t\t\t\t\t\t\t</div>\n" +
+					  "              \t\t\t\t\t\t\t</div>\n" +
+					  "            \t\t\t\t\t\t</div>\n" +
+					  "          \t\t\t\t\t</div>\n" +
+					  "        \t\t\t\t</div>\n" +
+					  "        \t\t\t\t<div id=\"fifty_one\">\n" +
+					  "          \t\t\t\t\t<div id=\"fifty_two\">\n" +
+					  "            \t\t\t\t\t\t<div id=\"fifty_three\">\n" +
+					  "              \t\t\t\t\t\t\t<img id=\"fifty_four\" alt=\"\" src=\"Images/picture-a.png\">\n" +
+					  "              \t\t\t\t\t\t\t\n" +
+					  "              \t\t\t\t\t\t\t<div id=\"fifty_five\">\n" +
+					  "                \t\t\t\t\t\t\t\t<div id=\"fifty_six\">3:15</div>\n" +
+					  "              \t\t\t\t\t\t\t</div>\n" +
+					  "            \t\t\t\t\t\t</div>\n" +
+					  "            \t\t\t\t\t\t<div id=\"fifty_seven\">\n" +
+					  "              \t\t\t\t\t\t\t<img id=\"fifty_eight\" alt=\"\" src=\"Images/youtube.svg\">\n" +
+					  "              \t\t\t\t\t\t\t\n" +
+					  "              \t\t\t\t\t\t\t<div id=\"fifty_nine\">\n" +
+					  "                \t\t\t\t\t\t\t\t<div id=\"sixty\">هر لوگویی رو متحرک کن Logo Motion</div>\n" +
+					  "                \t\t\t\t\t\t\t\t<div id=\"sixty_one\" >\n" +
+					  "                  \t\t\t\t\t\t\t\t\t<div id=\"sixty_two\">\n" +
+					  "                    \t\t\t\t\t\t\t\t\t\t<div id=\"sixty_three\">Digiato</div>\n" +
+					  "                  \t\t\t\t\t\t\t\t\t</div>\n" +
+					  "                  \t\t\t\t\t\t\t\t\t<div id=\"sixty_four\">1M views • 15 days ago</div>\n" +
+					  "                \t\t\t\t\t\t\t\t</div>\n" +
+					  "              \t\t\t\t\t\t\t</div>\n" +
+					  "            \t\t\t\t\t\t</div>\n" +
+					  "          \t\t\t\t\t</div>\n" +
+					  "        \t\t\t\t</div>\n" +
+					  "      \t\t\t</div>";
+			let searchBarContainer=document.getElementById("searchBarContainer");
+			searchBarContainer.after(specialVideosContainer);
+			searchBarContainer.addEventListener("keypress",(e)=>{
+				var code = (e.keyCode ? e.keyCode : e.which);
+				if (code == 13 && searchBarContainer.value.length>1) {
+					x++;
+					if(x>1){
+						document.getElementById("videoElements").remove();
+						searchBarContainer.after(specialVideosContainer);
+					}else {
+
+						fetch(`/search?q=${encodeURIComponent(searchBarContainer.value)}`)
+						.then(response => response.json())
+						.then(data => {
+							if (data.filtered) {
+								alert(data.message);
+							} else {
+								displayVideoList(data.videos,data.ai_message,specialVideosContainer);
+							}
+						})
+						.catch(error => {
+							console.error('Error fetching video data:', error);
+						});
+						e.preventDefault();
+
+						// پاک شود
+						// specialVideosContainer.innerHTML="\t<div id=\"four\">\n" +
+						// 		"        \t\t\t\t<img id=\"five\" alt=\"\" src=\"Images/loading.svg\">\n" +
+						// 		"        \t\t\t\t\n" +
+						// 		"        \t\t\t\t<div id=\"six\">\n" +
+						// 		"          \t\t\t\t\t<div id=\"seven\">در حال جست و جو</div>\n" +
+						// 		"        \t\t\t\t</div>\n" +
+						// 		"      \t\t\t</div>";
+
+					}
+				}
+			});
+		};
+      function videoClicked(x){
+		  document.getElementById("videoElements").innerHTML="<div style=\"margin-top: 350px;position: absolute;  width: 75.69%;  top: 16.375rem;  right: 12.15%;  left: 12.15%;  border-radius: 25px;  display: flex;  flex-direction: row;  flex-wrap: wrap;  align-items: center;  justify-content: center;  gap: 1.375rem;\">\n" +
+				 "        \t\t\t\t<div style=\"width: 50.063rem;  position: relative;  backdrop-filter: blur(62.67px);  border-radius: 12px;  background-color: rgba(255, 255, 255, 0.06);  height: 36.688rem;\">\n" +
+				 "          \t\t\t\t\t<div style=\"position: absolute;  top: calc(50% - 269.5px);  left: calc(50% - 376.5px);  width: 47.063rem;  height: 33.688rem;  display: flex;  flex-direction: column;  align-items: center;  justify-content: center;  gap: 1.881rem;\">\n" +
+				 "            \t\t\t\t\t\t<div style=\"align-self: stretch;  flex: 1;  position: relative;  border-radius: 12px;  overflow: hidden;\">\n" +
+				 "              \t\t\t\t\t\t\t<img style=\"position: absolute;  top: 0rem;  left: 0rem;  width: 47.063rem;  height: 28.313rem;  object-fit: cover;\" alt=\"\" src=\"Images/picture-a.png\">\n" +
+				 "              \t\t\t\t\t\t\t\n" +
+				 "              \t\t\t\t\t\t\t<div style=\"position: absolute;  top: 20.125rem;  left: 0rem;  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));  width: 47.063rem;  height: 8.188rem;\">\n" +
+				 "              \t\t\t\t\t\t\t</div>\n" +
+				 "              \t\t\t\t\t\t\t<div style=\"position: absolute;  height: 7.86%;  width: 97.53%;  top: 88.98%;  right: 1.35%;  bottom: 3.16%;  left: 1.12%;\">\n" +
+				 "                \t\t\t\t\t\t\t\t<img style=\"position: absolute;  height: 52.53%;  width: 1.73%;  top: 47.34%;  right: 96.54%;  bottom: 0.13%;  left: 1.73%;  max-width: 100%;  overflow: hidden;  max-height: 100%;\" alt=\"\" src=\"Images/play.svg\">\n" +
+				 "                \t\t\t\t\t\t\t\t\n" +
+				 "                \t\t\t\t\t\t\t\t<img style=\"position: absolute;  height: 47.47%;  width: 1.95%;  top: 49.97%;  right: 91.47%;  bottom: 2.56%;  left: 6.59%;  max-width: 100%;  overflow: hidden;  max-height: 100%;\" alt=\"\" src=\"Images/next-video.svg\">\n" +
+				 "                \t\t\t\t\t\t\t\t\n" +
+				 "                \t\t\t\t\t\t\t\t<img style=\"position: absolute;  height: 47.47%;  width: 1.95%;  top: 49.97%;  right: 86.39%;  bottom: 2.56%;  left: 11.66%;  max-width: 100%;  overflow: hidden;  max-height: 100%;\" alt=\"\" src=\"Images/sound.svg\">\n" +
+				 "                \t\t\t\t\t\t\t\t\n" +
+				 "                \t\t\t\t\t\t\t\t<img style=\"position: absolute;  height: 52.53%;  width: 2.17%;  top: 44.71%;  right: 1.51%;  bottom: 2.76%;  left: 96.32%;  max-width: 100%;  overflow: hidden;  max-height: 100%;\" alt=\"\" src=\"Images/fullscreen.svg\">\n" +
+				 "                \t\t\t\t\t\t\t\t\n" +
+				 "                \t\t\t\t\t\t\t\t<img style=\"position: absolute;  height: 44.66%;  width: 2.63%;  top: 49.97%;  right: 6.56%;  bottom: 5.37%;  left: 90.82%;  max-width: 100%;  overflow: hidden;  max-height: 100%;\" alt=\"\" src=\"Images/theather-mode.svg\">\n" +
+				 "                \t\t\t\t\t\t\t\t\n" +
+				 "                \t\t\t\t\t\t\t\t<img style=\"position: absolute;  height: 55.34%;  width: 2.7%;  top: 44.71%;  right: 11.67%;  bottom: -0.05%;  left: 85.63%;  max-width: 100%;  overflow: hidden;  max-height: 100%;\" alt=\"\" src=\"Images/pic-in-pic.svg\">\n" +
+				 "                \t\t\t\t\t\t\t\t\n" +
+				 "                \t\t\t\t\t\t\t\t<img style=\"position: absolute;  height: 44.66%;  width: 2.37%;  top: 49.97%;  right: 22.26%;  bottom: 5.37%;  left: 75.37%;  max-width: 100%;  overflow: hidden;  max-height: 100%;\" alt=\"\" src=\"Images/cc.svg\">\n" +
+				 "                \t\t\t\t\t\t\t\t\n" +
+				 "                \t\t\t\t\t\t\t\t<div style=\"position: absolute;  height: 63.2%;  width: 3.13%;  top: 34.19%;  right: 16.2%;  bottom: 2.61%;  left: 80.67%;\">\n" +
+				 "                  \t\t\t\t\t\t\t\t\t<img style=\"position: absolute;  height: 83.11%;  width: 67.39%;  top: 16.64%;  right: 32.61%;  bottom: 0.24%;  left: 0%;  max-width: 100%;  overflow: hidden;  max-height: 100%;\" alt=\"\" src=\"Images/settings.svg\">\n" +
+				 "                  \t\t\t\t\t\t\t\t\t\n" +
+				 "                  \t\t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 0rem;  left: 0.793rem;  width: 0.644rem;  height: 0.7rem;\">\n" +
+				 "                    \t\t\t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 0rem;  left: 0rem;  border-radius: 1.87px;  background-color: #d22f21;  width: 0.644rem;  height: 0.525rem;\">\n" +
+				 "                    \t\t\t\t\t\t\t\t\t\t</div>\n" +
+				 "                    \t\t\t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 0.059rem;  left: 0.149rem;  width: 0.369rem;  height: 0.644rem;\">\n" +
+				 "                      \t\t\t\t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 0.018rem;  left: 0rem;  display: inline-block;  width: 0.369rem;\">HD</div>\n" +
+				 "                      \t\t\t\t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 0rem;  left: 0rem;  color: #fff;  display: inline-block;  width: 0.369rem;\">HD</div>\n" +
+				 "                    \t\t\t\t\t\t\t\t\t\t</div>\n" +
+				 "                  \t\t\t\t\t\t\t\t\t</div>\n" +
+				 "                \t\t\t\t\t\t\t\t</div>\n" +
+				 "                \t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 1.171rem;  left: 7.286rem;  font-size: 0.761rem;  color: #ebeae9;  display: inline-block;  width: 4.563rem;  height: 0.7rem;\">27:42 / 1:00:00</div>\n" +
+				 "                \t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 0rem;  left: 0rem;  width: 45.9rem;  height: 0.175rem;\">\n" +
+				 "                  \t\t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 0rem;  left: 0rem;  background-color: rgba(255, 255, 255, 0.5);  width: 45.9rem;  height: 0.175rem;\">\n" +
+				 "                  \t\t\t\t\t\t\t\t\t</div>\n" +
+				 "                  \t\t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 0rem;  left: 22.057rem;  background-color: rgba(255, 255, 255, 0.5);  width: 4.313rem;  height: 0.175rem;  transform:  rotate(180deg);  transform-origin: 0 0;\">\n" +
+				 "                  \t\t\t\t\t\t\t\t\t</div>\n" +
+				 "                  \t\t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 0rem;  left: 0rem;  background-color: #ff0000;  width: 17.744rem;  height: 0.175rem;\">\n" +
+				 "                  \t\t\t\t\t\t\t\t\t</div>\n" +
+				 "                \t\t\t\t\t\t\t\t</div>\n" +
+				 "              \t\t\t\t\t\t\t</div>\n" +
+				 "            \t\t\t\t\t\t</div>\n" +
+				 "            \t\t\t\t\t\t<div style=\"display: flex;  flex-direction: row;  align-items: flex-start;  justify-content: flex-start;  text-align: center;  font-size: 1.375rem;  color: rgba(255, 255, 255, 0.86);  font-family: 'Yekan Bakh';\">\n" +
+				 "              \t\t\t\t\t\t\t<div style=\"width: 35.719rem;  display: flex;  flex-direction: column;  align-items: flex-start;  justify-content: flex-start;  gap: 0.625rem;\">\n" +
+				 "                \t\t\t\t\t\t\t\t<div style=\"align-self: stretch;  position: relative;  line-height: 3.447rem;  font-weight: 500;\">هر لوگویی رو متحرک کن Logo Motion</div>\n" +
+				 "                \t\t\t\t\t\t\t\t<div style=\"border-radius: 5.01px;  background-color: rgba(204, 0, 0, 0.9);  display: none;  flex-direction: row;  align-items: center;  justify-content: center;  padding: 0rem 0.625rem;  gap: 1.568rem;  text-align: left;  font-size: 1.88rem;  color: #fff;  font-family: Roboto;\">\n" +
+				 "                  \t\t\t\t\t\t\t\t\t<img style=\"width: 2.506rem;  position: relative;  height: 2.506rem;  overflow: hidden;  flex-shrink: 0;\" alt=\"\" src=\"Ico / Live.svg\">\n" +
+				 "                  \t\t\t\t\t\t\t\t\t\n" +
+				 "                  \t\t\t\t\t\t\t\t\t<div style=\"position: relative;  letter-spacing: 0.88px;  line-height: 1.88rem;  text-transform: uppercase;  font-weight: 500;\">En direct</div>\n" +
+				 "                \t\t\t\t\t\t\t\t</div>\n" +
+				 "              \t\t\t\t\t\t\t</div>\n" +
+				 "            \t\t\t\t\t\t</div>\n" +
+				 "          \t\t\t\t\t</div>\n" +
+				 "        \t\t\t\t</div>\n" +
+				 "        \t\t\t\t<div style=\"width: 16.688rem;  backdrop-filter: blur(25px);  border-radius: 12px;  background-color: rgba(255, 255, 255, 0.05);  height: 36.688rem;  overflow: hidden;  flex-shrink: 0;  display: flex;  flex-direction: row;  align-items: flex-start;  justify-content: center;  padding: 2rem 1.625rem;  box-sizing: border-box;  text-align: center;  font-size: 1rem;  color: rgba(255, 255, 255, 0.86);  font-family: 'Yekan Bakh';\">\n" +
+				 "          \t\t\t\t\t<div style=\"flex: 1;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;\">\n" +
+				 "            \t\t\t\t\t\t<div style=\"flex: 1;  position: relative;\">\n" +
+				 "              \t\t\t\t\t\t\t<p style=\"margin: 0;\">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک</p>\n" +
+				 "              \t\t\t\t\t\t\t<p style=\"margin: 0;\">&nbsp;</p>\n" +
+				 "              \t\t\t\t\t\t\t<p style=\"margin: 0;\"> است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد </p>\n" +
+				 "              \t\t\t\t\t\t\t<p style=\"margin: 0;\">&nbsp;</p>\n" +
+				 "              \t\t\t\t\t\t\t<p style=\"margin: 0;  white-space: pre-wrap;\">کتابهای زیادی در ش صت و سه درصد گذشته حال و آیندهلورم ایپسوم متن ساختگی با تولید   سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و  که لازم است و برای شرایط فعلی</p>\n" +
+				 "              \t\t\t\t\t\t\t<p style=\"margin: 0;\">&nbsp;</p>\n" +
+				 "            \t\t\t\t\t\t</div>\n" +
+				 "          \t\t\t\t\t</div>\n" +
+				 "        \t\t\t\t</div>\n" +
+				 "      \t\t\t</div>";
+		  document.getElementById("third").style.height='80rem';
+	  }
+	  function loadSpecialVideos(){
+
+	  }
+	  function displayAiMessage(message) {
+			const aiMessageContainer = document.getElementById('ai-message');
+			aiMessageContainer.textContent = message;
+		}
+		function displayVideoList(videoItems,ai_message,specialVideosContainer){
+			let element = document.createElement("div");
+			// ghagare toosh video bezarim
+			element.innerHTML = "<div style=\"position: absolute;  width: 63.89%;  top: 32rem;  right: 18.09%;  left: 18.02%;  border-radius: 25px;  height: 85.313rem;  display: flex;  flex-direction: column;  align-items: center;  justify-content: flex-start;  gap: 2.062rem;\">\n" +
+								"        \t\t\t\t<div style=\"align-self: stretch;  display: flex;  flex-direction: column;  align-items: center;  justify-content: flex-start;  gap: 0.562rem;  text-align: center;  font-size: 1rem;  color: rgba(255, 255, 255, 0.86);  font-family: 'Yekan Bakh';\">\n" +
+								"          \t\t\t\t\t<div style=\"align-self: stretch;  backdrop-filter: blur(25px);  border-radius: 12px;  background-color: rgba(255, 255, 255, 0.05);  overflow: hidden;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;  padding: 1.375rem 1.625rem;\">\n" +
+								"            \t\t\t\t\t\t<div style=\"flex: 1;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;\">\n" +
+								"            \t\t\t\t\t\t</div>\n" +
+								"          \t\t\t\t\t</div>\n" +
+								"          \t\t\t\t\t<div style=\"align-self: stretch;  backdrop-filter: blur(25px);  border-radius: 12px;  background-color: rgba(255, 255, 255, 0.05);  overflow: hidden;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;  padding: 1.375rem 1.625rem;  text-align: right;\">\n" +
+								"            \t\t\t\t\t\t<div style=\"flex: 1;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;\">\n" +
+								"              \t\t\t\t\t\t\t<div id='ai-message'  style=\"flex: 1;  position: relative; \">\n" + ai_message +
+								"              \t\t\t\t\t\t\t</div>\n" +
+								"            \t\t\t\t\t\t</div>\n" +
+								"          \t\t\t\t\t</div>\n" +
+								"        \t\t\t\t</div>\n" +
+								"        \t\t\t\t<div id='videos-list' style=\"align-self: stretch;  display: flex;  flex-direction: row;  flex-wrap: wrap;  align-items: flex-start;  justify-content: center;  gap: 1rem;\">\n" +
+
+								"        \t\t\t\t</div>\n" +
+								"        \t\t\t\t<div style=\"align-self: stretch;  display: flex;  flex-direction: row;  flex-wrap: wrap;  align-items: flex-start;  justify-content: center;  gap: 1rem;\">\n";
+			
+			//---------------------------
+			let em_str=""
+			videoItems.forEach(video => {
+				const videoTitle = video.snippet.title;
+				const videoThumbnail = video.snippet.thumbnails.default.url;
+				
+				em_str+="          \t\t\t\t\t<div class='video' onclick='videoClicked(3)' style=\"cursor: pointer;width: 18.5rem;  position: relative;  backdrop-filter: blur(25px);  border-radius: 12px;  background-color: rgba(255, 255, 255, 0.06);  height: 14.625rem;\">\n" +
+								"            \t\t\t\t\t\t<div style=\"position: absolute;  top: calc(50% - 107px);  left: calc(50% - 138px);  display: flex;  flex-direction: column;  align-items: center;  justify-content: center;  gap: 0.75rem;\">\n" +
+								"              \t\t\t\t\t\t\t<div style=\"width: 17.25rem;  position: relative;  border-radius: 12px;  height: 9.75rem;  overflow: hidden;  flex-shrink: 0;\">\n" +
+								"                \t\t\t\t\t\t\t\t<img style=\"position: absolute;  top: 0rem;  left: 0rem;  width: 17.25rem;  height: 9.75rem;  object-fit: cover;\" alt=\"\" src=\""+videoThumbnail+"\">\n" +
+								"                \t\t\t\t\t\t\t\t\n" +
+								"                \t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 8.375rem;  left: 15rem;  border-radius: 2px;  background-color: rgba(0, 0, 0, 0.8);  display: flex;  flex-direction: row;  align-items: flex-start;  justify-content: flex-start;  padding: 0.187rem 0.25rem;\">\n" +
+								"                  \t\t\t\t\t\t\t\t\t<div style=\"position: relative;  line-height: 0.75rem;  font-weight: 500;\">3:15</div>\n" +
+								"                \t\t\t\t\t\t\t\t</div>\n" +
+								"              \t\t\t\t\t\t\t</div>\n" +
+								"              \t\t\t\t\t\t\t<div style=\"display: flex;  flex-direction: row;  align-items: flex-start;  justify-content: flex-start;  gap: 0.75rem;  font-size: 1rem;  color: rgba(255, 255, 255, 0.86);  font-family: 'Yekan Bakh';\">\n" +
+								"                \t\t\t\t\t\t\t\t<img style=\"width: 2.25rem;  position: relative;  height: 2.25rem;  object-fit: cover;\" alt=\"\" src=\"Images/youtube.svg\">\n" +
+								"                \t\t\t\t\t\t\t\t\n" +
+								"                \t\t\t\t\t\t\t\t<div style=\"width: 14.25rem;  display: flex;  flex-direction: column;  align-items: flex-start;  justify-content: flex-start;  gap: 0.25rem;\">\n" +
+								"                  \t\t\t\t\t\t\t\t\t<div style=\"align-self: stretch;  position: relative;  line-height: 1.375rem;  font-weight: 500;\">"+videoTitle+" </div>\n" +
+								"                  \t\t\t\t\t\t\t\t\t<div style=\"align-self: stretch;  overflow: hidden;  display: flex;  flex-direction: row;  align-items: flex-start;  justify-content: flex-start;  gap: 0.75rem;  font-size: 0.875rem;  color: #606060;  font-family: Roboto;\">\n" +
+								"                    \t\t\t\t\t\t\t\t\t\t<div style=\"width: 3rem;  display: flex;  flex-direction: row;  align-items: center;  justify-content: flex-start;\">\n" +
+								"                      \t\t\t\t\t\t\t\t\t\t\t<div style=\"position: relative;  line-height: 1.25rem;\">Digiato</div>\n" +
+								"                    \t\t\t\t\t\t\t\t\t\t</div>\n" +
+								"                    \t\t\t\t\t\t\t\t\t\t<div style=\"width: 14.25rem;  position: relative;  line-height: 1.25rem;  display: inline-block;  flex-shrink: 0;\">1M views • 15 days ago</div>\n" +
+								"                  \t\t\t\t\t\t\t\t\t</div>\n" +
+								"                \t\t\t\t\t\t\t\t</div>\n" +
+								"              \t\t\t\t\t\t\t</div>\n" +
+								"            \t\t\t\t\t\t</div>\n" +
+								"          \t\t\t\t\t</div>\n";
+								
+
+			});
+
+				
+				specialVideosContainer.style.display = "flex";
+				specialVideosContainer.style.justifyContent = "center";
+				specialVideosContainer.style.top = "0";
+				//-------------------------
+	
+				specialVideosContainer.replaceWith(element);
+				element.setAttribute("id", "videoElements");
+				document.getElementById("third").style.height = "120rem";
+				let container=document.getElementById("videos-list")
+				container.innerHTML=em_str
+		};
+</script></body>
+</html>
