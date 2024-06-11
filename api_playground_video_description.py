@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-YOUR_API_KEY = "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"
+YOUR_API_KEY = "pplx-"
 
 system_prompt = """You are an AI assistant that uses the Perplexity API to analyze video metadata and generate a summary and important information about the video. You will receive three inputs: a user query, a video title, and a video description. You should use this information to generate a concise and informative description of the video.
 The output should be a list with two indices: [0/1, "ok"/"filtered", "video summary and information"].
