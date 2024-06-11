@@ -1,19 +1,62 @@
-
 const API_KEY = 'AIzaSyD_nl2Hzfq3vebmDD5g1WUJ5OHNHe27tyc';
+const PERPLEXITY_API_KEY = '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';
+
 const videoTitleInput = document.getElementById('video-title');
 const searchBtn = document.getElementById('search-btn');
 const videoList = document.getElementById('video-list');
 const videoPlayer = document.getElementById('video-player');
 
-searchBtn.addEventListener('click', fetchRelatedVideos);
+searchBtn.addEventListener('click', handleUserInput);
 
-function fetchRelatedVideos() {
-  const videoTitle = videoTitleInput.value.trim();
-  if (videoTitle === '') {
+function handleUserInput() {
+  const userInput = videoTitleInput.value.trim();
+  if (userInput === '') {
     alert('Please enter a video title.');
     return;
   }
 
+  checkContentWithPerplexity(userInput)
+    .then(isContentAllowed => {
+      if (isContentAllowed) {
+        fetchRelatedVideos(userInput);
+      } else {
+        displayContentRestrictedMessage();
+      }
+    })
+    .catch(error => {
+      console.error('Error checking content:', error);
+    });
+}
+
+function checkContentWithPerplexity(content) {
+  const options = {
+    method: 'POST',
+    
+    headers: {
+        accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer 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' // Replace with your actual API key
+      },
+    body: JSON.stringify({
+      model: 'llama-3-sonar-small-32k-online',
+      messages: [
+        { role: 'system', content: 'Check if the given content is against the laws of the Islamic Republic and if it is against just return :YES' },
+        { role: 'user', content: content }
+      ]
+    })
+  };
+
+  return fetch('https://api.perplexity.ai/chat/completions', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .then(data => {
+      const perplexityResponse = data.result.response.content;
+      return !perplexityResponse.includes('YES');
+    })
+    .catch(err => console.error(err));
+}
+
+function fetchRelatedVideos(videoTitle) {
   const maxResults = 10;
   const urlParams = new URLSearchParams({
     key: API_KEY,
@@ -37,7 +80,7 @@ function fetchRelatedVideos() {
 
 function displayVideoList(videoItems) {
   videoList.innerHTML = '';
-  videoPlayer.innerHTML = ''; // Clear the video player
+  videoPlayer.innerHTML = '';
 
   videoItems.forEach(video => {
     const videoTitle = video.snippet.title;
@@ -66,7 +109,14 @@ function displayVideoList(videoItems) {
 
 function embedVideo(videoId) {
   const pipedUrl = `https://piped.video/embed/${videoId}`;
-
   const playerHtml = `<iframe src="${pipedUrl}" width="640" height="360" frameborder="0" allowfullscreen></iframe>`;
   videoPlayer.innerHTML = playerHtml;
+}
+
+function displayContentRestrictedMessage() {
+  videoList.innerHTML = '';
+  videoPlayer.innerHTML = '';
+  const messageElement = document.createElement('p');
+  messageElement.textContent = 'Sorry, the content you input is against the laws of the Islamic Republic.';
+  videoList.appendChild(messageElement);
 }
