@@ -46,6 +46,12 @@ body {
     background-color: #0056b3;
 }
 
+.ai-message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
 .recommended-videos {
     margin-top: 20px;
 }
@@ -53,14 +59,21 @@ body {
 .video-container {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.video-box {
+.video-item {
     background-color: #e0e0e0;
     padding: 10px;
     border-radius: 5px;
     width: 30%;
     text-align: center;
+    margin: 10px;
+}
+
+.video-item img {
+    max-width: 100%;
+    border-radius: 5px;
 }
 
 .video-player {

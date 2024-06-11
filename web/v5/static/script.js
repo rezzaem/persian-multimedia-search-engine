@@ -8,13 +8,22 @@ document.getElementById('search-button').addEventListener('click', function() {
     fetch(`/search?q=${encodeURIComponent(query)}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data);  // Debug log
-            displayVideoList(data.items);
+            if (data.filtered) {
+                alert(data.message);
+            } else {
+                displayAiMessage(data.ai_message);
+                displayVideoList(data.videos);
+            }
         })
         .catch(error => {
             console.error('Error fetching video data:', error);
         });
 });
+
+function displayAiMessage(message) {
+    const aiMessageContainer = document.getElementById('ai-message');
+    aiMessageContainer.textContent = message;
+}
 
 function displayVideoList(videoItems) {
     const videoList = document.getElementById('video-list');
