@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-YOUR_API_KEY = "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"
+YOUR_API_KEY = "pplx-"
 
 messages = [
     {
