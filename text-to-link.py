@@ -2,7 +2,7 @@ from openai import OpenAI
 import requests
 from bs4 import BeautifulSoup
 
-YOUR_API_KEY = "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"
+YOUR_API_KEY = "perplexity api"
 
 def fetch_search_results(query):
     search_engine_url = "https://www.google.com/search?q=" + query.replace(" ", "+")
