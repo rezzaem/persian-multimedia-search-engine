@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+</head>
+<body>
+    <div id="video-container">
+    </div>
+    <a href="/">Go Back</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            
+            const videoId = '{{ video_id }}';
+            const pipedUrl = `https://cf.piped.video/embed/${videoid}`;
+            const playerHtml = `<iframe src="${pipedUrl}" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>`;
+            document.getElementById("video-container").innerHTML=playerHtml
+        });
+    </script>
+</body>
+</html>

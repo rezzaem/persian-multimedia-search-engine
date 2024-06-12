@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory , render_template
+
 import requests
 from openai import OpenAI
 import json
@@ -45,7 +46,7 @@ def search_videos():
     ]
 
     perplexity_response = client.chat.completions.create(
-        model="llama-3-sonar-small-32k-chat",
+        model="llama-3-sonar-small-32k-online",
         messages=messages,
     )
     analysis_result = perplexity_response.choices[0].message.content
@@ -75,15 +76,22 @@ def search_videos():
 
     response = requests.get(url, params=params)
     data = response.json()
-
+    
+    #/////////////////////////////////////
+    test_message="مهراد هیدن یک خواننده رپ و هیپ هاپ ایرانی است که در سبک رپ و راک و هیپ هاپ فعالیت می‌کند. او در سال ۱۳۶۳ در تهران متولد شد و در سال ۱۳۸۱ فعالیت هنری خود را آغاز کرد. او به همراه گروه زدبازی و دیگر هنرمندان همکاری داشته و آلبوم‌های مختلفی منتشر کرده است. مهراد هیدن در بین طرفداران رپ فارسی بسیار محبوب است و کنسرت‌های بسیاری برگزار کرده است."
     # Combine results
     result = {
         'filtered': False,
-        'ai_message': analysis_data[1][0],
+        'ai_message': test_message,
         'videos': data['items']
     }
 
     return jsonify(result)
 
-if __name__ == '__main__':
+@app.route('/video/<video_id>')
+def video(video_id):
+    return render_template('video_player.html', video_id=video_id)
+
+if __name__ == '__main__':  
     app.run(debug=True)
+
