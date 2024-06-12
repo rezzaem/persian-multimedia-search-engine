@@ -45,7 +45,7 @@ def search_videos():
     ]
 
     perplexity_response = client.chat.completions.create(
-        model="llama-3-sonar-small-32k-online",
+        model="llama-3-sonar-small-32k-chat",
         messages=messages,
     )
     analysis_result = perplexity_response.choices[0].message.content
