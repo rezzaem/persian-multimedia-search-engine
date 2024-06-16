@@ -138,6 +138,22 @@ def search_videos(query):
 
     response = requests.get(url, params=params)
     data = response.json()
+
+    #replace thumbnail with piped api ( it is filter in iran)
+    
+    for video in data['items']:
+        video_id = video['id']['videoId']
+        piped_api_url = f'https://pipedapi.kavin.rocks/streams/{video_id}'
+        piped_response = requests.get(piped_api_url)
+        if piped_response.status_code == 200:
+            piped_data = piped_response.json()
+            # Update the thumbnail URL
+            video['snippet']['thumbnails']['default']['url'] = piped_data['thumbnailUrl']
+            video['snippet']['thumbnails']['medium']['url'] = piped_data['thumbnailUrl']
+            video['snippet']['thumbnails']['high']['url'] = piped_data['thumbnailUrl']
+        else:
+            logging.error(f"Failed to fetch thumbnail for video {video_id} from Piped API")
+
     
     test_message = "مهراد هیدن یک خواننده رپ و هیپ هاپ ایرانی است که در سبک رپ و راک و هیپ هاپ فعالیت می‌کند. او در سال ۱۳۶۳ در تهران متولد شد و در سال ۱۳۸۱ فعالیت هنری خود را آغاز کرد. او به همراه گروه زدبازی و دیگر هنرمندان همکاری داشته و آلبوم‌های مختلفی منتشر کرده است. مهراد هیدن در بین طرفداران رپ فارسی بسیار محبوب است و کنسرت‌های بسیاری برگزار کرده است."
     
