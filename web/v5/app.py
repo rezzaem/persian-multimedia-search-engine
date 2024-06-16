@@ -5,6 +5,8 @@ from openai import OpenAI
 import json
 import logging
 import credentials
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 app = Flask(__name__, static_folder='static', static_url_path='')
 
 # Setup logging
@@ -92,8 +94,18 @@ def index():
 def video(video_id):
     return render_template('video_player.html', video_id=video_id)
 
+def fetch_piped_thumbnail(video_id):
+    piped_api_url = f'https://pipedapi.kavin.rocks/streams/{video_id}'
+    response = requests.get(piped_api_url)
+    if response.status_code == 200:
+        data = response.json()
+        return video_id, data['thumbnailUrl'], data["uploaderAvatar"]
+    else:
+        logging.error(f"Failed to fetch thumbnail for video {video_id} from Piped API")
+        return video_id, None
 
 @app.route('/search_list/<query>')
+    
 def search_videos(query):
     
     
@@ -101,7 +113,7 @@ def search_videos(query):
     if not query:
         return jsonify({'error': 'Missing query parameter'}), 400
 
-    # # Perplexity AI analysis
+    # Perplexity AI analysis
     # messages = [
     #     {"role": "system", "content": system_prompt},
     #     {"role": "user", "content": query},
@@ -141,18 +153,24 @@ def search_videos(query):
 
     #replace thumbnail with piped api ( it is filter in iran)
     
-    for video in data['items']:
-        video_id = video['id']['videoId']
-        piped_api_url = f'https://pipedapi.kavin.rocks/streams/{video_id}'
-        piped_response = requests.get(piped_api_url)
-        if piped_response.status_code == 200:
-            piped_data = piped_response.json()
-            # Update the thumbnail URL
-            video['snippet']['thumbnails']['default']['url'] = piped_data['thumbnailUrl']
-            video['snippet']['thumbnails']['medium']['url'] = piped_data['thumbnailUrl']
-            video['snippet']['thumbnails']['high']['url'] = piped_data['thumbnailUrl']
-        else:
-            logging.error(f"Failed to fetch thumbnail for video {video_id} from Piped API")
+     # Fetch Piped API thumbnails in parallel
+    with ThreadPoolExecutor(max_workers=12) as executor:
+        future_to_video = {executor.submit(fetch_piped_thumbnail, video['id']['videoId']): video for video in data['items']}
+
+        for future in as_completed(future_to_video):
+            video = future_to_video[future]
+            try:
+                video_id, thumbnail_url ,uploader_avatar= future.result()
+                if thumbnail_url:
+                    video['snippet']['thumbnails']['default']['url'] = thumbnail_url
+                    video['snippet']['thumbnails']['medium']['url'] = thumbnail_url
+                    video['snippet']['thumbnails']['high']['url'] = thumbnail_url
+                if uploader_avatar:
+                    video['snippet']['uploader_avatar'] = uploader_avatar
+                    
+
+            except Exception as exc:
+                logging.error(f"Generated an exception: {exc}")
 
     
     test_message = "مهراد هیدن یک خواننده رپ و هیپ هاپ ایرانی است که در سبک رپ و راک و هیپ هاپ فعالیت می‌کند. او در سال ۱۳۶۳ در تهران متولد شد و در سال ۱۳۸۱ فعالیت هنری خود را آغاز کرد. او به همراه گروه زدبازی و دیگر هنرمندان همکاری داشته و آلبوم‌های مختلفی منتشر کرده است. مهراد هیدن در بین طرفداران رپ فارسی بسیار محبوب است و کنسرت‌های بسیاری برگزار کرده است."
