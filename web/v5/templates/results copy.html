@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yekan Bakh:wght@400;500&display=swap" />
+    <style>
+        body {
+            margin: 0;
+            line-height: normal;
+            font-family: 'Yekan Bakh', sans-serif;
+        }
+        .video-item {
+            margin: 10px;
+        }
+        .video-item img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 50px;">
+        <h1>Results for "<span id="query"></span>"</h1>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const result = JSON.parse({{ result|tojson|safe }});
+            const resultsDiv = document.getElementById('results');
+            document.getElementById('query').textContent = result.query;
+            
+            if (result.filtered) {
+                resultsDiv.innerHTML = `<p>${result.message}</p>`;
+            } else {
+                result.videos.forEach(video => {
+                    const videoItem = document.createElement('div');
+                    videoItem.classList.add('video-item');
+                    videoItem.innerHTML = `
+                        <h3>${video.snippet.title}</h3>
+                        <img src="${video.snippet.thumbnails.default.url}" alt="${video.snippet.title}">
+                        <p>${video.snippet.description}</p>
+                    `;
+                    videoItem.addEventListener('click', () => {
+                        window.location.href = `/video/${video.id.videoId}`;
+                    });
+                    resultsDiv.appendChild(videoItem);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

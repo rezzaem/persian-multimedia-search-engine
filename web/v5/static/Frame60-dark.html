@@ -777,20 +777,20 @@
 						document.getElementById("videoElements").remove();
 						searchBarContainer.after(specialVideosContainer);
 					}else {
-
-						fetch(`/search?q=${encodeURIComponent(searchBarContainer.value)}`)
-						.then(response => response.json())
-						.then(data => {
-							if (data.filtered) {
-								alert(data.message);
-							} else {
-								displayVideoList(data.videos,data.ai_message,specialVideosContainer);
-							}
-						})
-						.catch(error => {
-							console.error('Error fetching video data:', error);
-						});
-						e.preventDefault();
+						window.location.href = `/search_list/${searchBarContainer.value}`;
+						// fetch(`/search?q=${encodeURIComponent(searchBarContainer.value)}`)
+						// .then(response => response.json())
+						// .then(data => {
+						// 	if (data.filtered) {
+						// 		alert(data.message);
+						// 	} else {
+						// 		displayVideoList(data.videos,data.ai_message,specialVideosContainer);
+						// 	}
+						// })
+						// .catch(error => {
+						// 	console.error('Error fetching video data:', error);
+						// });
+						// e.preventDefault();
 
 						// پاک شود
 						// specialVideosContainer.innerHTML="\t<div id=\"four\">\n" +
@@ -850,91 +850,91 @@
 	  function loadSpecialVideos(){
 
 	  }
-	  function displayAiMessage(message) {
-			const aiMessageContainer = document.getElementById('ai-message');
-			aiMessageContainer.textContent = message;
-		}
-		function displayVideoList(videoItems,ai_message,specialVideosContainer){
-			let idArray=[];
-			let array=[];
-			let title_array=[];
-			let x=0;
-			let element = document.createElement("div");
-			// ghagare toosh video bezarim
-			element.innerHTML = "<div style=\"position: absolute;  width: 63.89%;  top: 32rem;  right: 18.09%;  left: 18.02%;  border-radius: 25px;  height: 85.313rem;  display: flex;  flex-direction: column;  align-items: center;  justify-content: flex-start;  gap: 2.062rem;\">\n" +
-								"        \t\t\t\t<div style=\"align-self: stretch;  display: flex;  flex-direction: column;  align-items: center;  justify-content: flex-start;  gap: 0.562rem;  text-align: center;  font-size: 1rem;  color: rgba(255, 255, 255, 0.86);  font-family: 'Yekan Bakh';\">\n" +
-								"          \t\t\t\t\t<div style=\"align-self: stretch;  backdrop-filter: blur(25px);  border-radius: 12px;  background-color: rgba(255, 255, 255, 0.05);  overflow: hidden;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;  padding: 1.375rem 1.625rem;\">\n" +
-								"            \t\t\t\t\t\t<div style=\"flex: 1;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;\">\n" +
-								"            \t\t\t\t\t\t</div>\n" +
-								"          \t\t\t\t\t</div>\n" +
-								"          \t\t\t\t\t<div style=\"align-self: stretch;  backdrop-filter: blur(25px);  border-radius: 12px;  background-color: rgba(255, 255, 255, 0.05);  overflow: hidden;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;  padding: 1.375rem 1.625rem;  text-align: right;\">\n" +
-								"            \t\t\t\t\t\t<div style=\"flex: 1;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;\">\n" +
-								"              \t\t\t\t\t\t\t<div id='ai-message'  style=\"flex: 1;  position: relative; \">\n" + ai_message +
-								"              \t\t\t\t\t\t\t</div>\n" +
-								"            \t\t\t\t\t\t</div>\n" +
-								"          \t\t\t\t\t</div>\n" +
-								"        \t\t\t\t</div>\n" +
-								"        \t\t\t\t<div id='videos-list' style=\"align-self: stretch;  display: flex;  flex-direction: row;  flex-wrap: wrap;  align-items: flex-start;  justify-content: center;  gap: 1rem;\">\n" +
+	//   function displayAiMessage(message) {
+	// 		const aiMessageContainer = document.getElementById('ai-message');
+	// 		aiMessageContainer.textContent = message;
+	// 	}
+	// 	function displayVideoList(videoItems,ai_message,specialVideosContainer){
+	// 		let idArray=[];
+	// 		let array=[];
+	// 		let title_array=[];
+	// 		let x=0;
+	// 		let element = document.createElement("div");
+	// 		// ghagare toosh video bezarim
+	// 		element.innerHTML = "<div style=\"position: absolute;  width: 63.89%;  top: 32rem;  right: 18.09%;  left: 18.02%;  border-radius: 25px;  height: 85.313rem;  display: flex;  flex-direction: column;  align-items: center;  justify-content: flex-start;  gap: 2.062rem;\">\n" +
+	// 							"        \t\t\t\t<div style=\"align-self: stretch;  display: flex;  flex-direction: column;  align-items: center;  justify-content: flex-start;  gap: 0.562rem;  text-align: center;  font-size: 1rem;  color: rgba(255, 255, 255, 0.86);  font-family: 'Yekan Bakh';\">\n" +
+	// 							"          \t\t\t\t\t<div style=\"align-self: stretch;  backdrop-filter: blur(25px);  border-radius: 12px;  background-color: rgba(255, 255, 255, 0.05);  overflow: hidden;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;  padding: 1.375rem 1.625rem;\">\n" +
+	// 							"            \t\t\t\t\t\t<div style=\"flex: 1;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;\">\n" +
+	// 							"            \t\t\t\t\t\t</div>\n" +
+	// 							"          \t\t\t\t\t</div>\n" +
+	// 							"          \t\t\t\t\t<div style=\"align-self: stretch;  backdrop-filter: blur(25px);  border-radius: 12px;  background-color: rgba(255, 255, 255, 0.05);  overflow: hidden;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;  padding: 1.375rem 1.625rem;  text-align: right;\">\n" +
+	// 							"            \t\t\t\t\t\t<div style=\"flex: 1;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;\">\n" +
+	// 							"              \t\t\t\t\t\t\t<div id='ai-message'  style=\"flex: 1;  position: relative; \">\n" + ai_message +
+	// 							"              \t\t\t\t\t\t\t</div>\n" +
+	// 							"            \t\t\t\t\t\t</div>\n" +
+	// 							"          \t\t\t\t\t</div>\n" +
+	// 							"        \t\t\t\t</div>\n" +
+	// 							"        \t\t\t\t<div id='videos-list' style=\"align-self: stretch;  display: flex;  flex-direction: row;  flex-wrap: wrap;  align-items: flex-start;  justify-content: center;  gap: 1rem;\">\n" +
 
-								"        \t\t\t\t</div>\n" +
-								"        \t\t\t\t<div style=\"align-self: stretch;  display: flex;  flex-direction: row;  flex-wrap: wrap;  align-items: flex-start;  justify-content: center;  gap: 1rem;\">\n";
+	// 							"        \t\t\t\t</div>\n" +
+	// 							"        \t\t\t\t<div style=\"align-self: stretch;  display: flex;  flex-direction: row;  flex-wrap: wrap;  align-items: flex-start;  justify-content: center;  gap: 1rem;\">\n";
 			
-			//---------------------------
-			let em_str=""
-			videoItems.forEach(video => {
-				let idString="showed-video"+x;
-				idArray.push(idString);
-				const videoTitle = video.snippet.title;
-				const videoThumbnail = video.snippet.thumbnails.default.url;
-				let videoid=video.id.videoId+"";
-				title_array.push(videoTitle)
-                array.push(videoid);
-				em_str+="          \t\t\t\t\t<div class='video' id='"+idArray[x]+"' style=\"cursor: pointer;width: 18.5rem;  position: relative;  backdrop-filter: blur(25px);  border-radius: 12px;  background-color: rgba(255, 255, 255, 0.06);  height: 14.625rem;\">\n" +
-								"            \t\t\t\t\t\t<div style=\"position: absolute;  top: calc(50% - 107px);  left: calc(50% - 138px);  display: flex;  flex-direction: column;  align-items: center;  justify-content: center;  gap: 0.75rem;\">\n" +
-								"              \t\t\t\t\t\t\t<div style=\"width: 17.25rem;  position: relative;  border-radius: 12px;  height: 9.75rem;  overflow: hidden;  flex-shrink: 0;\">\n" +
-								"                \t\t\t\t\t\t\t\t<img style=\"position: absolute;  top: 0rem;  left: 0rem;  width: 17.25rem;  height: 9.75rem;  object-fit: cover;\" alt=\"\" src=\""+videoThumbnail+"\">\n" +
-								"                \t\t\t\t\t\t\t\t\n" +
-								"                \t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 8.375rem;  left: 15rem;  border-radius: 2px;  background-color: rgba(0, 0, 0, 0.8);  display: flex;  flex-direction: row;  align-items: flex-start;  justify-content: flex-start;  padding: 0.187rem 0.25rem;\">\n" +
-								"                  \t\t\t\t\t\t\t\t\t<div style=\"position: relative;  line-height: 0.75rem;  font-weight: 500;\">3:15</div>\n" +
-								"                \t\t\t\t\t\t\t\t</div>\n" +
-								"              \t\t\t\t\t\t\t</div>\n" +
-								"              \t\t\t\t\t\t\t<div style=\"display: flex;  flex-direction: row;  align-items: flex-start;  justify-content: flex-start;  gap: 0.75rem;  font-size: 1rem;  color: rgba(255, 255, 255, 0.86);  font-family: 'Yekan Bakh';\">\n" +
-								"                \t\t\t\t\t\t\t\t<img style=\"width: 2.25rem;  position: relative;  height: 2.25rem;  object-fit: cover;\" alt=\"\" src=\"Images/youtube.svg\">\n" +
-								"                \t\t\t\t\t\t\t\t\n" +
-								"                \t\t\t\t\t\t\t\t<div style=\"width: 14.25rem;  display: flex;  flex-direction: column;  align-items: flex-start;  justify-content: flex-start;  gap: 0.25rem;\">\n" +
-								"                  \t\t\t\t\t\t\t\t\t<div style=\"align-self: stretch;  position: relative;  line-height: 1.375rem;  font-weight: 500;\">"+videoTitle+" </div>\n" +
-								"                  \t\t\t\t\t\t\t\t\t<div style=\"align-self: stretch;  overflow: hidden;  display: flex;  flex-direction: row;  align-items: flex-start;  justify-content: flex-start;  gap: 0.75rem;  font-size: 0.875rem;  color: #606060;  font-family: Roboto;\">\n" +
-								"                    \t\t\t\t\t\t\t\t\t\t<div style=\"width: 3rem;  display: flex;  flex-direction: row;  align-items: center;  justify-content: flex-start;\">\n" +
-								"                      \t\t\t\t\t\t\t\t\t\t\t<div style=\"position: relative;  line-height: 1.25rem;\">Digiato</div>\n" +
-								"                    \t\t\t\t\t\t\t\t\t\t</div>\n" +
-								"                    \t\t\t\t\t\t\t\t\t\t<div style=\"width: 14.25rem;  position: relative;  line-height: 1.25rem;  display: inline-block;  flex-shrink: 0;\">1M views • 15 days ago</div>\n" +
-								"                  \t\t\t\t\t\t\t\t\t</div>\n" +
-								"                \t\t\t\t\t\t\t\t</div>\n" +
-								"              \t\t\t\t\t\t\t</div>\n" +
-								"            \t\t\t\t\t\t</div>\n" +
-								"          \t\t\t\t\t</div>\n";
-												x++;
+	// 		//---------------------------
+	// 		let em_str=""
+	// 		videoItems.forEach(video => {
+	// 			let idString="showed-video"+x;
+	// 			idArray.push(idString);
+	// 			const videoTitle = video.snippet.title;
+	// 			const videoThumbnail = video.snippet.thumbnails.default.url;
+	// 			let videoid=video.id.videoId+"";
+	// 			title_array.push(videoTitle)
+    //             array.push(videoid);
+	// 			em_str+="          \t\t\t\t\t<div class='video' id='"+idArray[x]+"' style=\"cursor: pointer;width: 18.5rem;  position: relative;  backdrop-filter: blur(25px);  border-radius: 12px;  background-color: rgba(255, 255, 255, 0.06);  height: 14.625rem;\">\n" +
+	// 							"            \t\t\t\t\t\t<div style=\"position: absolute;  top: calc(50% - 107px);  left: calc(50% - 138px);  display: flex;  flex-direction: column;  align-items: center;  justify-content: center;  gap: 0.75rem;\">\n" +
+	// 							"              \t\t\t\t\t\t\t<div style=\"width: 17.25rem;  position: relative;  border-radius: 12px;  height: 9.75rem;  overflow: hidden;  flex-shrink: 0;\">\n" +
+	// 							"                \t\t\t\t\t\t\t\t<img style=\"position: absolute;  top: 0rem;  left: 0rem;  width: 17.25rem;  height: 9.75rem;  object-fit: cover;\" alt=\"\" src=\""+videoThumbnail+"\">\n" +
+	// 							"                \t\t\t\t\t\t\t\t\n" +
+	// 							"                \t\t\t\t\t\t\t\t<div style=\"position: absolute;  top: 8.375rem;  left: 15rem;  border-radius: 2px;  background-color: rgba(0, 0, 0, 0.8);  display: flex;  flex-direction: row;  align-items: flex-start;  justify-content: flex-start;  padding: 0.187rem 0.25rem;\">\n" +
+	// 							"                  \t\t\t\t\t\t\t\t\t<div style=\"position: relative;  line-height: 0.75rem;  font-weight: 500;\">3:15</div>\n" +
+	// 							"                \t\t\t\t\t\t\t\t</div>\n" +
+	// 							"              \t\t\t\t\t\t\t</div>\n" +
+	// 							"              \t\t\t\t\t\t\t<div style=\"display: flex;  flex-direction: row;  align-items: flex-start;  justify-content: flex-start;  gap: 0.75rem;  font-size: 1rem;  color: rgba(255, 255, 255, 0.86);  font-family: 'Yekan Bakh';\">\n" +
+	// 							"                \t\t\t\t\t\t\t\t<img style=\"width: 2.25rem;  position: relative;  height: 2.25rem;  object-fit: cover;\" alt=\"\" src=\"Images/youtube.svg\">\n" +
+	// 							"                \t\t\t\t\t\t\t\t\n" +
+	// 							"                \t\t\t\t\t\t\t\t<div style=\"width: 14.25rem;  display: flex;  flex-direction: column;  align-items: flex-start;  justify-content: flex-start;  gap: 0.25rem;\">\n" +
+	// 							"                  \t\t\t\t\t\t\t\t\t<div style=\"align-self: stretch;  position: relative;  line-height: 1.375rem;  font-weight: 500;\">"+videoTitle+" </div>\n" +
+	// 							"                  \t\t\t\t\t\t\t\t\t<div style=\"align-self: stretch;  overflow: hidden;  display: flex;  flex-direction: row;  align-items: flex-start;  justify-content: flex-start;  gap: 0.75rem;  font-size: 0.875rem;  color: #606060;  font-family: Roboto;\">\n" +
+	// 							"                    \t\t\t\t\t\t\t\t\t\t<div style=\"width: 3rem;  display: flex;  flex-direction: row;  align-items: center;  justify-content: flex-start;\">\n" +
+	// 							"                      \t\t\t\t\t\t\t\t\t\t\t<div style=\"position: relative;  line-height: 1.25rem;\">Digiato</div>\n" +
+	// 							"                    \t\t\t\t\t\t\t\t\t\t</div>\n" +
+	// 							"                    \t\t\t\t\t\t\t\t\t\t<div style=\"width: 14.25rem;  position: relative;  line-height: 1.25rem;  display: inline-block;  flex-shrink: 0;\">1M views • 15 days ago</div>\n" +
+	// 							"                  \t\t\t\t\t\t\t\t\t</div>\n" +
+	// 							"                \t\t\t\t\t\t\t\t</div>\n" +
+	// 							"              \t\t\t\t\t\t\t</div>\n" +
+	// 							"            \t\t\t\t\t\t</div>\n" +
+	// 							"          \t\t\t\t\t</div>\n";
+	// 											x++;
 
-			});
+	// 		});
 
 				
-				specialVideosContainer.style.display = "flex";
-				specialVideosContainer.style.justifyContent = "center";
-				specialVideosContainer.style.top = "0";
-				//-------------------------
+	// 			specialVideosContainer.style.display = "flex";
+	// 			specialVideosContainer.style.justifyContent = "center";
+	// 			specialVideosContainer.style.top = "0";
+	// 			//-------------------------
 	
-				specialVideosContainer.replaceWith(element);
-				element.setAttribute("id", "videoElements");
-				document.getElementById("third").style.height = "120rem";
-				let container=document.getElementById("videos-list")
-				container.innerHTML=em_str
-				for(let i=0;i<12;i++){
-					let video_player=document.getElementById(idArray[i]);
-			video_player.addEventListener('click', () => {
-            videoClicked(array[i],title_array[i]);
-        });
-				}
+	// 			specialVideosContainer.replaceWith(element);
+	// 			element.setAttribute("id", "videoElements");
+	// 			document.getElementById("third").style.height = "120rem";
+	// 			let container=document.getElementById("videos-list")
+	// 			container.innerHTML=em_str
+	// 			for(let i=0;i<12;i++){
+	// 				let video_player=document.getElementById(idArray[i]);
+	// 		video_player.addEventListener('click', () => {
+    //         videoClicked(array[i],title_array[i]);
+    //     });
+	// 			}
 
-		};
+	// 	};
 </script></body>
 </html>
