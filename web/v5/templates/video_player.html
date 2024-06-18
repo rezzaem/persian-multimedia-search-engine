@@ -100,7 +100,7 @@
         				<div style="position: relative;  line-height: 0.75rem;">کلیه حقوق برای لوگو محفوظ است.</div>
       			</div>
     		</div>
-    		<!-- <div style="position: absolute;  width: 46.53%;  top: 7.938rem;  right: 26.74%;  left: 26.74%;  backdrop-filter: blur(25px);  border-radius: 40px;  background-color: rgba(255, 255, 255, 0.05);  display: flex;  flex-direction: row;  align-items: center;  justify-content: space-between;  padding: 0.75rem 1.125rem;  box-sizing: border-box;  cursor: pointer;  font-size: 1rem;  color: rgba(255, 255, 255, 0.86);" id="searchBarContainer">
+    		<div style="position: absolute;  width: 46.53%;  top: 7.938rem;  right: 26.74%;  left: 26.74%;  backdrop-filter: blur(25px);  border-radius: 40px;  background-color: rgba(255, 255, 255, 0.05);  display: flex;  flex-direction: row;  align-items: center;  justify-content: space-between;  padding: 0.75rem 1.125rem;  box-sizing: border-box;  cursor: pointer;  font-size: 1rem;  color: rgba(255, 255, 255, 0.86);" id="searchBarContainer">
       			<img style="width: 1.5rem;  position: relative;  height: 1.5rem;  overflow: hidden;  flex-shrink: 0;" alt="" src="{{ url_for('static', filename='Images/search.svg') }}">
       			
       			<div style="display: flex;  flex-direction: row;  align-items: center;  justify-content: center;  gap: 0.5rem;">
@@ -108,10 +108,7 @@
         				<img style="width: 1.375rem;  position: relative;  height: 1.375rem;  overflow: hidden;  flex-shrink: 0;" alt="" src="{{ url_for('static', filename='Images/AI Icon.svg') }}">
         				
       			</div>
-    		</div> -->
-            <input placeholder="فکر نکن، جست و جو کن" type="text" id="searchBarContainer" style="margin-top: -250px;text-align: right ; position: absolute;  width: 46.53%;  top: 24.813rem;  right: 26.74%;  left: 26.74%;  backdrop-filter: blur(25px);  border-radius: 40px;  background-color: rgba(255, 255, 255, 0.05);  display: flex;  flex-direction: row;  align-items: center;  justify-content: space-between;  padding: 0.75rem 1.125rem;  box-sizing: border-box;  cursor: pointer;  font-size: 1rem;  color: rgba(255, 255, 255, 0.86);">
-
-            </input>
+    		</div>
     		<div style="position: absolute;  width: 100%;  top: 0rem;  right: 0rem;  left: 0rem;  height: 6.063rem;  overflow: hidden;  display: flex;  flex-direction: row;  flex-wrap: wrap;  align-items: center;  justify-content: space-between;  padding: 1.5rem 2.625rem;  box-sizing: border-box;  font-size: 0.916rem;  color: #fff;">
       			<div style="width: 2.5rem;  height: 2.5rem;  overflow: hidden;  flex-shrink: 0;  display: flex;  flex-direction: row;  align-items: center;  justify-content: center;  padding: 0.125rem;  box-sizing: border-box;  cursor: pointer;" id="darklightModeContainer">
         				<img style="width: 1.319rem;  position: relative;  height: 1.319rem;" alt="" src="{{ url_for('static', filename='Images/Group.svg') }}">
@@ -141,13 +138,6 @@
             document.getElementById("video-player").innerHTML=playerHtml
             document.getElementById("video_title").innerText=array_of_data[1]
             console.log(array_of_data[1])
-            document.getElementById('searchBarContainer').addEventListener("keypress",(e)=>{
-				var code = (e.keyCode ? e.keyCode : e.which);
-				if (code == 13 && document.getElementById('searchBarContainer').value.length>1) {
-					window.location.href = `/search_list/${document.getElementById('searchBarContainer').value}`;
-
-				}
-			});
         });
     </script>
   	

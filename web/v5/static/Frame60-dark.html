@@ -777,20 +777,20 @@
 						document.getElementById("videoElements").remove();
 						searchBarContainer.after(specialVideosContainer);
 					}else {
-						window.location.href = `/search_list/${searchBarContainer.value}`;
-						// fetch(`/search?q=${encodeURIComponent(searchBarContainer.value)}`)
-						// .then(response => response.json())
-						// .then(data => {
-						// 	if (data.filtered) {
-						// 		alert(data.message);
-						// 	} else {
-						// 		displayVideoList(data.videos,data.ai_message,specialVideosContainer);
-						// 	}
-						// })
-						// .catch(error => {
-						// 	console.error('Error fetching video data:', error);
-						// });
-						// e.preventDefault();
+
+						fetch(`/search?q=${encodeURIComponent(searchBarContainer.value)}`)
+						.then(response => response.json())
+						.then(data => {
+							if (data.filtered) {
+								alert(data.message);
+							} else {
+								displayVideoList(data.videos,data.ai_message,specialVideosContainer);
+							}
+						})
+						.catch(error => {
+							console.error('Error fetching video data:', error);
+						});
+						e.preventDefault();
 
 						// پاک شود
 						// specialVideosContainer.innerHTML="\t<div id=\"four\">\n" +
